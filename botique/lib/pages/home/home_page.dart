@@ -1,3 +1,4 @@
+import 'package:botique/pages/home/news/newsletters_page.dart';
 import 'package:botique/pages/home/profile_drawer_list.dart';
 import 'package:botique/resources/strings.dart';
 import 'package:flutter/cupertino.dart';
@@ -37,9 +38,7 @@ class _HomePageState extends State<HomePage> {
             Container(
               color: Colors.red,
             ),
-            Container(
-              color: Colors.blueGrey,
-            ),
+            NewsLettersPage()
           ],
         ),
       ),

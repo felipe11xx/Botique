@@ -20,4 +20,6 @@ class Strings{
   static String posts = "Postagens";
   static String newsletters = "novidades";
 
+  static String newsError =  "Não foi possível carregar as notícias";
+
 }
