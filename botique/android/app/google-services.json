@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1091598248804",
+    "firebase_url": "https://botique-2c3d8.firebaseio.com",
+    "project_id": "botique-2c3d8",
+    "storage_bucket": "botique-2c3d8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1091598248804:android:0a41ba01c2a23bdd6de871",
+        "android_client_info": {
+          "package_name": "striker2x2.com.botique"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1091598248804-lep0skv63ptja4vd3eo0pp6pnnjs798t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "striker2x2.com.botique",
+            "certificate_hash": "68ec4220e83bafe8a5cc925dd304cec87cef4ea7"
+          }
+        },
+        {
+          "client_id": "1091598248804-hgg8p1o1hj8mc3kgfe9sijqpgasm4o9m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhteL9-MuRIEX6dx1BdH7V9jlFCuE-Jsk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1091598248804-hgg8p1o1hj8mc3kgfe9sijqpgasm4o9m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

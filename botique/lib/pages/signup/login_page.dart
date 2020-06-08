@@ -1,4 +1,3 @@
-
 import 'package:botique/pages/home/home_page.dart';
 import 'package:botique/resources/strings.dart';
 import 'package:botique/utils/navigation.dart';
@@ -32,46 +31,40 @@ class _LoginPageState extends State<LoginPage> {
   _body() {
     return Form(
       key: _formKey,
-
-      child:  Container(
+      child: Container(
         padding: EdgeInsets.all(16),
         color: Colors.lime,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-             children: <Widget>[
-               ListView(
-                 shrinkWrap: true,
-                children: <Widget>[
-                  AppInputText(
-                    Strings.login,
-                    Strings.insertLogin,
-                    textEditingController: _tLogin,
-                    validator: validateEmail,
-                    action: TextInputAction.next,
-                    keyboardType: TextInputType.emailAddress,
-                    nextFocus: _focusPassword,
-                  ),
-                  SizedBox(
-                    height: 16,
-                  ),
-                  AppInputText(Strings.password, Strings.insertPassword,
-                      isPassword: true,
-                      textEditingController: _tPassword,
-                      validator: validatePassword,
-                      keyboardType: TextInputType.number,
-                      focusNode: _focusPassword),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  AppButton(
-                    Strings.login,
-                    onPressed: () => _onClickLogin(),
-                    showProgress: _showProgress,
-                  ),]),
-             ],
-           ),
+        child: ListView(
+          children: <Widget>[
+            AppInputText(
+              Strings.login,
+              Strings.insertLogin,
+              textEditingController: _tLogin,
+              validator: validateEmail,
+              action: TextInputAction.next,
+              keyboardType: TextInputType.emailAddress,
+              nextFocus: _focusPassword,
+            ),
+            SizedBox(
+              height: 16,
+            ),
+            AppInputText(Strings.password, Strings.insertPassword,
+                isPassword: true,
+                textEditingController: _tPassword,
+                validator: validatePassword,
+                keyboardType: TextInputType.number,
+                focusNode: _focusPassword),
+            SizedBox(
+              height: 20,
+            ),
+            AppButton(
+              Strings.login,
+              onPressed: () => _onClickLogin(),
+              showProgress: _showProgress,
+            ),
+          ],
+        ),
       ),
-
     );
   }
 
@@ -101,6 +94,4 @@ class _LoginPageState extends State<LoginPage> {
 //      alert(context, response.message);
 //    }
   }
-
-
 }

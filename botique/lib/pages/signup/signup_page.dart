@@ -22,6 +22,8 @@ class _SignUpPageState extends State<SignUpPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        resizeToAvoidBottomInset: true,
+        resizeToAvoidBottomPadding: true,
         appBar: AppBar(
           title: Text(Strings.botique),
         ),
@@ -34,52 +36,49 @@ class _SignUpPageState extends State<SignUpPage> {
       child: Container(
         padding: EdgeInsets.all(16),
         color: Colors.lime,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+        child: ListView(
           children: <Widget>[
-            ListView(
-              shrinkWrap: true,
-              children: <Widget>[
-                AppInputText(
-                  Strings.name,
-                  Strings.insertName,
-                  textEditingController: _tName,
-                  textCapitalization: TextCapitalization.words,
-                  validator: validateName,
-                  action: TextInputAction.next,
-                  keyboardType: TextInputType.text,
-                  nextFocus: _focusEmail,
-                ),
-                SizedBox(
-                  height: 16,
-                ),
-                AppInputText(
-                  Strings.email,
-                  Strings.insertEmail,
-                  textEditingController: _tEmail,
-                  validator: validateEmail,
-                  keyboardType: TextInputType.emailAddress,
-                  focusNode: _focusEmail,
-                  nextFocus: _focusPassword,
-                ),
-                SizedBox(
-                  height: 16,
-                ),
-                AppInputText(Strings.password, Strings.insertPassword,
-                    isPassword: true,
-                    textEditingController: _tPassword,
-                    validator: validatePassword,
-                    keyboardType: TextInputType.number,
-                    focusNode: _focusPassword),
-                SizedBox(
-                  height: 20,
-                ),
-                AppButton(
-                  Strings.singUp,
-                  onPressed: () => _onClickSignUp(),
-                  showProgress: _showProgress,
-                ),
-              ],
+            AppInputText(
+              Strings.name,
+              Strings.insertName,
+              textEditingController: _tName,
+              textCapitalization: TextCapitalization.words,
+              validator: validateName,
+              action: TextInputAction.next,
+              keyboardType: TextInputType.text,
+              nextFocus: _focusEmail,
+            ),
+            SizedBox(
+              height: 16,
+            ),
+            AppInputText(
+              Strings.email,
+              Strings.insertEmail,
+              textEditingController: _tEmail,
+              validator: validateEmail,
+              keyboardType: TextInputType.emailAddress,
+              focusNode: _focusEmail,
+              nextFocus: _focusPassword,
+            ),
+            SizedBox(
+              height: 16,
+            ),
+            AppInputText(Strings.password, Strings.insertPassword,
+                isPassword: true,
+                textEditingController: _tPassword,
+                validator: validatePassword,
+                keyboardType: TextInputType.number,
+                focusNode: _focusPassword),
+//            Padding(
+//                padding: EdgeInsets.only(
+//                    bottom: MediaQuery.of(context).viewInsets.bottom)),
+            SizedBox(
+              height: 32,
+            ),
+            AppButton(
+              Strings.singUp,
+              onPressed: () => _onClickSignUp(),
+              showProgress: _showProgress,
             ),
           ],
         ),
@@ -119,5 +118,4 @@ class _SignUpPageState extends State<SignUpPage> {
     }
     return null;
   }
-
 }

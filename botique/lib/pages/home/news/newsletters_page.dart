@@ -1,11 +1,10 @@
 import 'package:botique/bloc/news_bloc.dart';
-import 'package:botique/domain/news.dart';
 import 'package:botique/domain/news_list.dart';
-import 'package:botique/network/api_news.dart';
 import 'package:botique/resources/strings.dart';
-import 'package:botique/widgets/app_card_newsletters.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import 'newsletters_listview.dart';
 
 class NewsLettersPage extends StatefulWidget {
   @override
@@ -52,23 +51,11 @@ class _NewsLettersPageState extends State<NewsLettersPage> with AutomaticKeepAli
         }
 
         NewsList newsList = snapshot.data;
-        return _listView(newsList.news);
+        return NewsletterListView(newsList.news);
       },
     );
   }
 
-  _listView(List<News> news) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 16),
-      child: ListView.builder(
-          itemCount: news != null ? news.length : 0,
-          itemBuilder: (context, index) {
-            News n = news[index];
-
-            return cardNewsLetters(n, context);
-          }),
-    );
-  }
 
   @override
   void dispose() {
