@@ -1,5 +1,9 @@
+import 'package:botique/firebase/firebase_service.dart';
+import 'package:botique/pages/home/home_page.dart';
 import 'package:botique/resources/strings.dart';
+import 'package:botique/utils/navigation.dart';
 import 'package:botique/utils/validator.dart';
+import 'package:botique/widgets/app_alert.dart';
 import 'package:botique/widgets/app_button.dart';
 import 'package:botique/widgets/app_inputtext.dart';
 import 'package:flutter/cupertino.dart';
@@ -35,7 +39,6 @@ class _SignUpPageState extends State<SignUpPage> {
       key: _formKey,
       child: Container(
         padding: EdgeInsets.all(16),
-        color: Colors.lime,
         child: ListView(
           children: <Widget>[
             AppInputText(
@@ -77,39 +80,54 @@ class _SignUpPageState extends State<SignUpPage> {
             ),
             AppButton(
               Strings.singUp,
-              onPressed: () => _onClickSignUp(),
+              onPressed: () => _onClickSignUp(context),
               showProgress: _showProgress,
             ),
+            SizedBox(
+              height: 32,
+            ),
+            AppButton(
+              Strings.cancel,
+              color: Colors.white,
+              textColor: Colors.deepPurpleAccent,
+              onPressed: () => _onClickCancel(),
+            ),
+
           ],
         ),
       ),
     );
   }
 
-  _onClickSignUp() async {
-    if (!_formKey.currentState.validate()) return;
-    String name = _tName.text;
-    String email = _tName.text;
-    String password = _tPassword.text;
+  _onClickSignUp(context) async {
+    print("Cadastrar!");
+
+    String nome = _tName.text;
+    String email = _tEmail.text;
+    String senha = _tPassword.text;
+
+    print("Nome $nome, Email $email, Senha $senha");
+
+    if (!_formKey.currentState.validate()) {
+      return;
+    }
 
     setState(() {
       _showProgress = true;
     });
-//    ApiResponse response = await LoginApi.login(login, password);
-//
-//    if (response.ok) {
-//      User user = response.result;
-//      print("nome > $user");
-//      push(context, HomePage(), replace: true);
-//      setState(() {
-//        _showProgress = false;
-//      });
-//    } else {
-//      setState(() {
-//        _showProgress = false;
-//      });
-//      alert(context, response.message);
-//    }
+
+    final service = FirebaseService();
+    final response = await service.signup(nome, email, senha);
+
+    if (response.ok) {
+      push(context, HomePage(),replace:true);
+    } else {
+      alert(context, response.msg);
+    }
+
+    setState(() {
+      _showProgress = false;
+    });
   }
 
   String validateField(String value) {
@@ -117,5 +135,9 @@ class _SignUpPageState extends State<SignUpPage> {
       return Strings.insertAText;
     }
     return null;
+  }
+
+  _onClickCancel() {
+    pop(context);
   }
 }

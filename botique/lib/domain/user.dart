@@ -1,18 +1,69 @@
-class User {
-  String name;
-  String profilePicture;
+import 'dart:convert' as convert;
 
-  User({this.name, this.profilePicture});
+import 'package:botique/utils/prefs.dart';
+
+class User {
+  String login;
+  String name;
+  String email;
+  String urlFoto;
+  String token;
+  List<String> roles;
+
+  User(
+      {this.login,
+        this.name,
+        this.email,
+        this.urlFoto,
+        this.token,
+        this.roles});
 
   User.fromJson(Map<String, dynamic> json) {
-    name = json['name'];
-    profilePicture = json['profile_picture'];
+    login = json['login'];
+    name = json['nome'];
+    email = json['email'];
+    urlFoto = json['urlFoto'];
+    token = json['token'];
+    roles = json['roles'] != null ? json['roles'].cast<String>() : null;
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['name'] = this.name;
-    data['profile_picture'] = this.profilePicture;
+    data['login'] = this.login;
+    data['nome'] = this.name;
+    data['email'] = this.email;
+    data['urlFoto'] = this.urlFoto;
+    data['token'] = this.token;
+    data['roles'] = this.roles;
     return data;
   }
+
+  static void clear() {
+    Prefs.setString("user.prefs", "");
+  }
+
+  void save() {
+    Map map = toJson();
+
+    String json = convert.json.encode(map);
+
+    Prefs.setString("user.prefs", json);
+  }
+
+  static Future<User> get() async {
+    String json = await Prefs.getString("user.prefs");
+    if(json.isEmpty) {
+      return null;
+    }
+    Map map = convert.json.decode(json);
+    User user = User.fromJson(map);
+    return user;
+  }
+
+  @override
+  String toString() {
+    return 'Usuario{login: $login, nome: $name}';
+  }
+
+
 }

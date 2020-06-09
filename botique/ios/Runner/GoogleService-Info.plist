@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>1091598248804-2ne5n64h2giakt3ij9gajmh8o02hil79.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1091598248804-2ne5n64h2giakt3ij9gajmh8o02hil79</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>1091598248804-lep0skv63ptja4vd3eo0pp6pnnjs798t.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBfsOOENzm4qnCOwQVukfD6BxP_hm5ox3E</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1091598248804</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>striker2x2.com.botique</string>
+	<key>PROJECT_ID</key>
+	<string>botique-2c3d8</string>
+	<key>STORAGE_BUCKET</key>
+	<string>botique-2c3d8.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1091598248804:ios:555938f0fb119d4a6de871</string>
+	<key>DATABASE_URL</key>
+	<string>https://botique-2c3d8.firebaseio.com</string>
+</dict>
+</plist>

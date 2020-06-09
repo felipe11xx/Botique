@@ -32,7 +32,7 @@ class _HomePageState extends State<HomePage> {
             name: "Felipe",
             email: "felipe@hotmail.com",
             profilePicture:
-                "https://i.pinimg.com/474x/6a/f3/29/6af32952636b69c6b3a3fb115ae1eb43.jpg"),
+                "https://i.pinimg.com/474x/6a/f3/29/jotaro.jpg"),
         body: TabBarView(
           children: <Widget>[
             Container(

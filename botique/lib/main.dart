@@ -1,4 +1,4 @@
-import 'package:botique/pages/signup/route_signup.dart';
+import 'package:botique/pages/splash_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,10 +14,10 @@ class MyApp extends StatelessWidget {
         title: 'Flutter Demo',
         theme: ThemeData(
           brightness: Brightness.light,
-          primarySwatch: Colors.green,
+          primarySwatch: Colors.deepPurple,
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
-        home: RouteSignUpPage(),
+        home: SplashPage(),
     );
   }
 }

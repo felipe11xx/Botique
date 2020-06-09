@@ -22,4 +22,11 @@ class Strings{
 
   static String newsError =  "Não foi possível carregar as notícias";
 
+  static String standUser = "Felipe J. Frazão";
+  static String standName = "Star Platinum";
+  static String standUserEmail = "felipe11xx@hotmail.com";
+
+  static String userCreated = "Usuário criado com sucesso";
+  static String userNotCreatedError = "Não foi possivel criar um usuário";
+
 }

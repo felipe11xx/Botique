@@ -1,11 +1,19 @@
+import 'package:botique/bloc/login_bloc.dart';
+import 'package:botique/firebase/firebase_service.dart';
+import 'package:botique/network/api_response.dart';
 import 'package:botique/pages/home/home_page.dart';
+import 'package:botique/pages/signup/signup_page.dart';
 import 'package:botique/resources/strings.dart';
 import 'package:botique/utils/navigation.dart';
 import 'package:botique/utils/validator.dart';
+import 'package:botique/widgets/app_alert.dart';
 import 'package:botique/widgets/app_button.dart';
 import 'package:botique/widgets/app_inputtext.dart';
+import 'package:botique/widgets/app_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_auth_buttons/flutter_auth_buttons.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -13,10 +21,11 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  final _tLogin = TextEditingController();
+  final _tEmail = TextEditingController();
   final _tPassword = TextEditingController();
   final _formKey = GlobalKey<FormState>();
   final _focusPassword = FocusNode();
+  LoginBloc _loginBloc = LoginBloc();
   bool _showProgress = false;
 
   @override
@@ -33,13 +42,12 @@ class _LoginPageState extends State<LoginPage> {
       key: _formKey,
       child: Container(
         padding: EdgeInsets.all(16),
-        color: Colors.lime,
         child: ListView(
           children: <Widget>[
             AppInputText(
-              Strings.login,
+              Strings.email,
               Strings.insertLogin,
-              textEditingController: _tLogin,
+              textEditingController: _tEmail,
               validator: validateEmail,
               action: TextInputAction.next,
               keyboardType: TextInputType.emailAddress,
@@ -57,11 +65,37 @@ class _LoginPageState extends State<LoginPage> {
             SizedBox(
               height: 20,
             ),
-            AppButton(
-              Strings.login,
-              onPressed: () => _onClickLogin(),
-              showProgress: _showProgress,
+            StreamBuilder<bool>(
+              stream: _loginBloc.stream,
+              initialData: false,
+              builder: (context, snapshot) {
+                return AppButton(
+                  Strings.login,
+                  onPressed: _onClickLogin,
+                  showProgress: snapshot.data,
+                );
+              },
             ),
+            Container(
+              height: 46,
+              margin: EdgeInsets.only(top: 20),
+              child: GoogleSignInButton(
+                onPressed: _onClickGoogle,
+              ),
+            ),
+            Container(
+                height: 46,
+                margin: EdgeInsets.only(top: 24),
+                child: InkWell(
+                  onTap: _onClickSignup,
+                  child: text(
+                    Strings.singUp,
+                    fontSize: 22,
+                    color: Colors.blue,
+                    decoration: TextDecoration.underline,
+                    textAlign: TextAlign.center,
+                  ),
+                )),
           ],
         ),
       ),
@@ -70,28 +104,36 @@ class _LoginPageState extends State<LoginPage> {
 
   _onClickLogin() async {
     if (!_formKey.currentState.validate()) return;
-    String login = _tLogin.text;
+    String email = _tEmail.text;
     String password = _tPassword.text;
 
-    setState(() {
-      _showProgress = true;
-    });
+    ApiResponse response = await _loginBloc.login(email, password);
 
-    push(context, HomePage());
-//    ApiResponse response = await LoginApi.login(login, password);
-//
-//    if (response.ok) {
-//      User user = response.result;
-//      print("nome > $user");
-//      push(context, HomePage(), replace: true);
-//      setState(() {
-//        _showProgress = false;
-//      });
-//    } else {
-//      setState(() {
-//        _showProgress = false;
-//      });
-//      alert(context, response.message);
-//    }
+    if (response.ok) {
+      push(context, HomePage(), replace: true);
+    } else {
+      alert(context, response.msg);
+    }
+  }
+
+  void _onClickGoogle() async {
+    final service = FirebaseService();
+    ApiResponse response = await service.loginGoogle();
+
+    if (response.ok) {
+      push(context, HomePage(), replace: true);
+    } else {
+      alert(context, response.msg);
+    }
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _loginBloc.dispose();
+  }
+
+  void _onClickSignup() {
+    push(context, SignUpPage(),replace: true);
   }
 }

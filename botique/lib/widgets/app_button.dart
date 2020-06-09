@@ -7,8 +7,9 @@ class AppButton extends StatelessWidget {
   Function onPressed;
   bool showProgress;
   Color color;
+  Color textColor;
 
-  AppButton(this.text, {this.onPressed, this.showProgress = false, this.color = Colors.lightGreen});
+  AppButton(this.text, {this.onPressed, this.showProgress = false, this.color = Colors.deepPurpleAccent, this.textColor = Colors.white});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +17,7 @@ class AppButton extends StatelessWidget {
       height: 48,
       child: RaisedButton(
         color: color,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
         child: showProgress
             ? Container(
                 height:30,
@@ -29,7 +30,7 @@ class AppButton extends StatelessWidget {
               )
             : Text(
                 text,
-                style: TextStyle(color: Colors.white, fontSize: 22),
+                style: TextStyle(color: textColor, fontSize: 22),
               ),
         onPressed: onPressed,
       ),
