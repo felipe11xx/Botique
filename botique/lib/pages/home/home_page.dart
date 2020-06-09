@@ -1,4 +1,5 @@
 import 'package:botique/pages/home/news/newsletters_page.dart';
+import 'package:botique/pages/home/posts/post_page.dart';
 import 'package:botique/pages/home/profile_drawer_list.dart';
 import 'package:botique/resources/strings.dart';
 import 'package:flutter/cupertino.dart';
@@ -35,9 +36,7 @@ class _HomePageState extends State<HomePage> {
                 "https://i.pinimg.com/474x/6a/f3/29/jotaro.jpg"),
         body: TabBarView(
           children: <Widget>[
-            Container(
-              color: Colors.red,
-            ),
+            PostPage(),
             NewsLettersPage()
           ],
         ),

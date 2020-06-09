@@ -1,5 +1,5 @@
-import 'package:botique/bloc/news_bloc.dart';
-import 'package:botique/domain/news_list.dart';
+import 'package:botique/bloc/news/news_bloc.dart';
+import 'package:botique/domain/news/news_list.dart';
 import 'package:botique/resources/strings.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

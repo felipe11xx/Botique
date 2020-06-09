@@ -1,4 +1,6 @@
+import 'package:botique/bloc/signup/signup_bloc.dart';
 import 'package:botique/firebase/firebase_service.dart';
+import 'package:botique/network/api_response.dart';
 import 'package:botique/pages/home/home_page.dart';
 import 'package:botique/resources/strings.dart';
 import 'package:botique/utils/navigation.dart';
@@ -21,7 +23,7 @@ class _SignUpPageState extends State<SignUpPage> {
   final _formKey = GlobalKey<FormState>();
   final _focusPassword = FocusNode();
   final _focusEmail = FocusNode();
-  bool _showProgress = false;
+  SignUpBloc _signUpBloc = SignUpBloc();
 
   @override
   Widget build(BuildContext context) {
@@ -72,19 +74,22 @@ class _SignUpPageState extends State<SignUpPage> {
                 validator: validatePassword,
                 keyboardType: TextInputType.number,
                 focusNode: _focusPassword),
-//            Padding(
-//                padding: EdgeInsets.only(
-//                    bottom: MediaQuery.of(context).viewInsets.bottom)),
             SizedBox(
               height: 32,
             ),
-            AppButton(
-              Strings.singUp,
-              onPressed: () => _onClickSignUp(context),
-              showProgress: _showProgress,
+            StreamBuilder<bool>(
+              stream: _signUpBloc.stream,
+              initialData: false,
+              builder: (context, snapshot) {
+                return AppButton(
+                  Strings.singUp,
+                  onPressed: _onClickSignUp,
+                  showProgress: snapshot.data,
+                );
+              },
             ),
             SizedBox(
-              height: 32,
+              height: 16,
             ),
             AppButton(
               Strings.cancel,
@@ -99,35 +104,17 @@ class _SignUpPageState extends State<SignUpPage> {
     );
   }
 
-  _onClickSignUp(context) async {
-    print("Cadastrar!");
+  _onClickSignUp() async{
+    if (!_formKey.currentState.validate()) return;
 
-    String nome = _tName.text;
-    String email = _tEmail.text;
-    String senha = _tPassword.text;
-
-    print("Nome $nome, Email $email, Senha $senha");
-
-    if (!_formKey.currentState.validate()) {
-      return;
-    }
-
-    setState(() {
-      _showProgress = true;
-    });
-
-    final service = FirebaseService();
-    final response = await service.signup(nome, email, senha);
+    ApiResponse response = await _signUpBloc.signUp(_tName.text, _tEmail.text, _tPassword.text);
 
     if (response.ok) {
-      push(context, HomePage(),replace:true);
+      push(context, HomePage(), replace: true);
     } else {
       alert(context, response.msg);
     }
 
-    setState(() {
-      _showProgress = false;
-    });
   }
 
   String validateField(String value) {
@@ -139,5 +126,11 @@ class _SignUpPageState extends State<SignUpPage> {
 
   _onClickCancel() {
     pop(context);
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _signUpBloc.dispose();
   }
 }

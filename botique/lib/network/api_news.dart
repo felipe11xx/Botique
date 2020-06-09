@@ -1,4 +1,4 @@
-import 'package:botique/domain/news_list.dart';
+import 'package:botique/domain/news/news_list.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert' as convert;
 

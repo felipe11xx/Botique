@@ -1,4 +1,4 @@
-import 'package:botique/bloc/login_bloc.dart';
+import 'package:botique/bloc/signup/login_bloc.dart';
 import 'package:botique/firebase/firebase_service.dart';
 import 'package:botique/network/api_response.dart';
 import 'package:botique/pages/home/home_page.dart';
@@ -13,7 +13,6 @@ import 'package:botique/widgets/app_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_auth_buttons/flutter_auth_buttons.dart';
-import 'package:google_sign_in/google_sign_in.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -26,7 +25,6 @@ class _LoginPageState extends State<LoginPage> {
   final _formKey = GlobalKey<FormState>();
   final _focusPassword = FocusNode();
   LoginBloc _loginBloc = LoginBloc();
-  bool _showProgress = false;
 
   @override
   Widget build(BuildContext context) {
@@ -87,7 +85,7 @@ class _LoginPageState extends State<LoginPage> {
                 height: 46,
                 margin: EdgeInsets.only(top: 24),
                 child: InkWell(
-                  onTap: _onClickSignup,
+                  onTap: _onClickSignUp,
                   child: text(
                     Strings.singUp,
                     fontSize: 22,
@@ -133,7 +131,7 @@ class _LoginPageState extends State<LoginPage> {
     _loginBloc.dispose();
   }
 
-  void _onClickSignup() {
-    push(context, SignUpPage(),replace: true);
+  void _onClickSignUp() {
+    push(context, SignUpPage());
   }
 }

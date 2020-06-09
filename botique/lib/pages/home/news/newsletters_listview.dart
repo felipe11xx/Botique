@@ -1,7 +1,10 @@
-import 'package:botique/domain/news.dart';
-import 'package:botique/widgets/app_card_newsletters.dart';
+import 'package:botique/domain/news/news.dart';
+import 'package:botique/utils/date_formatter.dart';
+import 'package:botique/widgets/app_card_messages.dart';
 import 'package:flutter/cupertino.dart';
 
+
+// ignore: must_be_immutable
 class NewsletterListView extends StatelessWidget {
   List<News> news;
 
@@ -20,7 +23,8 @@ class NewsletterListView extends StatelessWidget {
           itemBuilder: (context, index) {
             News n = news[index];
 
-            return cardNewsLetters(n, context);
+            return CardMessage(n.user.name, n.message.content,
+                dateFormatter(n.message.createdAt), context);
           }),
     );
   }
