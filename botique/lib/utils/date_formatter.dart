@@ -9,6 +9,6 @@ dateFormatter(String date){
 dateNow(){
 
   var now = DateTime.now();
-  var dateNow = DateFormat("yyyy/MM/dd").format(now);
+  var dateNow = DateFormat("yyyy/MM/dd hh:mm:ss").format(now);
   return dateNow;
 }

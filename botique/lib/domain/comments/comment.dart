@@ -1,32 +1,32 @@
-class Post {
+class Comment {
   String id;
   String authorId;
   String author;
-  String postContent;
+  String content;
   String postDate;
 
-  Post(
+  Comment(
       {this.id,
         this.author,
         this.authorId,
-        this.postContent,
+        this.content,
         this.postDate,
       });
 
-  Post.fromJson(Map<String, dynamic> json) {
+  Comment.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     authorId = json['authorId'];
     author = json['author'];
     postDate = json['postDate'];
-    postContent = json['postContent'];
+    content = json['content'];
   }
 
 
-  Post.fromMap(Map<String, dynamic> map) {
+  Comment.fromMap(Map<String, dynamic> map) {
     id = map['id'];
     author = map['author'];
     authorId = map['authorId'];
-    postContent = map['postContent'];
+    content = map['content'];
     postDate = map['postDate'];
   }
 
@@ -35,8 +35,8 @@ class Post {
     data['id'] = this.id;
     data['authorId'] = this.authorId;
     data['author'] = this.author;
+    data['content'] = this.content;
     data['postDate'] = this.postDate;
-    data['postContent'] = this.postContent;
     return data;
   }
 

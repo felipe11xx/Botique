@@ -58,7 +58,7 @@ class AppInputText extends StatelessWidget {
         labelStyle: TextStyle(color: Colors.grey, fontSize: 25),
         hintText: hint,
         hintStyle: TextStyle(color: Colors.grey, fontSize: 16),
-        hintMaxLines: 2,
+        hintMaxLines: 1,
         suffixIcon: suffixIcon
       ),
     );

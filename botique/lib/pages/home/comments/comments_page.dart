@@ -1,23 +1,22 @@
-import 'package:botique/domain/posts/post.dart';
+import 'package:botique/domain/comments/comment.dart';
 import 'package:botique/domain/user.dart';
-import 'package:botique/firebase/posts_service.dart';
-import 'package:botique/pages/home/posts/post_listview.dart';
+import 'package:botique/firebase/comments_service.dart';
+import 'package:botique/pages/home/comments/comments_listview.dart';
 import 'package:botique/resources/strings.dart';
 import 'package:botique/utils/date_formatter.dart';
 import 'package:botique/utils/validator.dart';
 import 'package:botique/widgets/app_inputtext.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:uuid/uuid.dart';
 
-class PostPage extends StatefulWidget {
+class CommentsPage extends StatefulWidget {
   @override
-  _PostPageState createState() => _PostPageState();
+  _CommentsPageState createState() => _CommentsPageState();
 }
 
-class _PostPageState extends State<PostPage> {
+class _CommentsPageState extends State<CommentsPage> {
   final _tComment = TextEditingController();
 
   final _formKey = GlobalKey<FormState>();
@@ -59,7 +58,7 @@ class _PostPageState extends State<PostPage> {
 
   _streamBuilder() {
     return StreamBuilder<QuerySnapshot>(
-      stream: PostsService().stream,
+      stream: CommentsService().stream,
       builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
         if (snapshot.hasError) return new Text('Error: ${snapshot.error}');
         if (!snapshot.hasData) {
@@ -68,12 +67,12 @@ class _PostPageState extends State<PostPage> {
           );
         }
 
-        List<Post> posts =
+        List<Comment> comments =
             snapshot.data.documents.map((DocumentSnapshot document) {
-          return Post.fromMap(document.data);
+          return Comment.fromMap(document.data);
         }).toList();
 
-        return PostsListView(posts);
+        return CommentsListView(comments);
       },
     );
   }
@@ -84,18 +83,17 @@ class _PostPageState extends State<PostPage> {
     Future<User> future = User.get();
     final String comment = _tComment.text;
     User user;
-    Post p;
+    Comment c;
     future.then((value) => {
           user = value,
-
-
-          p = Post(
+          c = Comment(
               id: Uuid().v1(),
               authorId: user.id,
               author: user.name ,
-              postContent:comment ,
+              content:comment ,
               postDate: dateNow()),
-          PostsService().sendPost(p)
+
+          CommentsService().sendPost(c)
         });
     _tComment.text = "";
     FocusScope.of(context).requestFocus(new FocusNode());  }

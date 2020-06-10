@@ -1,9 +1,10 @@
 import 'package:botique/pages/home/news/newsletters_page.dart';
-import 'package:botique/pages/home/posts/post_page.dart';
 import 'package:botique/pages/home/profile_drawer_list.dart';
 import 'package:botique/resources/strings.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import 'comments/comments_page.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -41,7 +42,7 @@ class _HomePageState extends State<HomePage> {
           },
           child: TabBarView(
             children: <Widget>[
-              PostPage(),
+              CommentsPage(),
               NewsLettersPage()
             ],
           ),

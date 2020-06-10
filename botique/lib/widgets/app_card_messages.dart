@@ -1,4 +1,3 @@
-import 'package:botique/domain/posts/post.dart';
 import 'package:botique/resources/strings.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
