@@ -1,5 +1,6 @@
-class Strings{
-  static String botique = "Botique" ;
+class Strings {
+  static String botique = "Botique";
+
   static String login = "Login";
   static String password = "Senha";
   static String insertPassword = "Digite sua senha";
@@ -9,7 +10,7 @@ class Strings{
   static String cancel = "cancelar";
   static String loginError = "Não foi possível realizar o login";
   static String singUp = "Cadastre-se";
-  static String logout= "Logout";
+  static String logout = "Logout";
   static String email = "Email";
   static String insertEmail = "Digite o Email";
   static String name = "Nome";
@@ -20,7 +21,7 @@ class Strings{
   static String posts = "Postagens";
   static String newsletters = "novidades";
 
-  static String newsError =  "Não foi possível carregar as notícias";
+  static String newsError = "Não foi possível carregar as notícias";
 
   static String standUser = "Felipe J. Frazão";
   static String standName = "Star Platinum";
@@ -33,5 +34,8 @@ class Strings{
   static String createComment = "Insira seu comentario abaixo ";
   static String comment = "Comentario";
 
-  static String postCollection ="posts";
+  static String postCollection = "posts";
+
+  static String defaultPicture =
+      "https://i.pinimg.com/474x/6a/f3/29/6af32952636b69c6b3a3fb115ae1eb43.jpg";
 }

@@ -7,6 +7,7 @@ import 'package:botique/utils/date_formatter.dart';
 import 'package:botique/utils/validator.dart';
 import 'package:botique/widgets/app_inputtext.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:uuid/uuid.dart';
@@ -86,10 +87,12 @@ class _PostPageState extends State<PostPage> {
     Post p;
     future.then((value) => {
           user = value,
+
+
           p = Post(
               id: Uuid().v1(),
               authorId: user.id,
-              author: user.name,
+              author: user.name ,
               postContent:comment ,
               postDate: dateNow()),
           PostsService().sendPost(p)
@@ -98,10 +101,7 @@ class _PostPageState extends State<PostPage> {
     FocusScope.of(context).requestFocus(new FocusNode());  }
 
   void _onEditComment() {
-//    var now = DateTime.now();
-//    var datePost = DateFormat("yyyy/MM/dd").format(now);
-//    Firestore.instance.collection("posts").document("1").setData(Post(author: "Pedro",authorId: "2", postContent: "postagem nova", postDate:datePost).toJson());
-  }
+}
 
   void _onDeletePost() {}
 }

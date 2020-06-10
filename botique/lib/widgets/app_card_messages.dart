@@ -19,7 +19,7 @@ class CardMessage extends StatelessWidget {
 
   _card(String author, String content, String date, BuildContext context) {
     return Card(
-      color: Colors.grey[200],
+
       child: Container(
         padding: EdgeInsets.all(12),
         child: Column(

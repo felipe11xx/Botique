@@ -15,7 +15,15 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           brightness: Brightness.light,
           primarySwatch: Colors.deepPurple,
+          cardColor: Colors.grey[200],
           visualDensity: VisualDensity.adaptivePlatformDensity,
+        ),
+        darkTheme: ThemeData(
+          brightness: Brightness.dark,
+          accentColor: Colors.deepPurpleAccent ,
+          cardColor: Colors.purple[200],
+          visualDensity: VisualDensity.adaptivePlatformDensity,
+
         ),
         home: SplashPage(),
     );

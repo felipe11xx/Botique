@@ -3,14 +3,12 @@ import 'dart:convert' as convert;
 import 'package:botique/utils/prefs.dart';
 
 class User {
-  String login;
   String name;
   String email;
   String urlFoto;
   String id;
 
   User({
-    this.login,
     this.name,
     this.email,
     this.urlFoto,
@@ -18,7 +16,6 @@ class User {
   });
 
   User.fromJson(Map<String, dynamic> json) {
-    login = json['login'];
     name = json['nome'];
     email = json['email'];
     urlFoto = json['urlFoto'];
@@ -27,7 +24,6 @@ class User {
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['login'] = this.login;
     data['nome'] = this.name;
     data['email'] = this.email;
     data['urlFoto'] = this.urlFoto;
@@ -59,6 +55,6 @@ class User {
 
   @override
   String toString() {
-    return 'User{login: $login, name: $name, email: $email, urlFoto: $urlFoto, id: $id}';
+    return 'User{name: $name, email: $email, urlFoto: $urlFoto, id: $id}';
   }
 }

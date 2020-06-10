@@ -1,6 +1,7 @@
 import 'package:botique/bloc/simple_bloc.dart';
 import 'package:botique/firebase/firebase_service.dart';
 import 'package:botique/network/api_response.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class SignUpBloc extends BooleanBloc{
 

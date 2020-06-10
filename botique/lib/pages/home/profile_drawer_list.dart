@@ -1,3 +1,4 @@
+import 'package:botique/domain/user.dart';
 import 'package:botique/firebase/firebase_service.dart';
 import 'package:botique/pages/signup/login_page.dart';
 import 'package:botique/utils/navigation.dart';
@@ -15,16 +16,16 @@ class ProfileDrawerList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Future<FirebaseUser> future = FirebaseAuth.instance.currentUser();
+    Future<User> future = User.get();
 
     return SafeArea(
       child: Drawer(
         child: ListView(
           children: <Widget>[
-            FutureBuilder<FirebaseUser>(
+            FutureBuilder<User>(
               future: future,
               builder: (context, snapshot) {
-                FirebaseUser user = snapshot.data;
+                User user = snapshot.data;
                 return user != null ? _header(user) : Container();
               },
             ),
@@ -40,13 +41,13 @@ class ProfileDrawerList extends StatelessWidget {
     );
   }
 
-  UserAccountsDrawerHeader _header(FirebaseUser user) {
+  UserAccountsDrawerHeader _header(User user) {
     return UserAccountsDrawerHeader(
-      accountName: Text(user.displayName ?? ""),
+      accountName: Text(user.name ?? ""),
       accountEmail: Text(user.email),
-      currentAccountPicture: user.photoUrl != null
+      currentAccountPicture: user.urlFoto != null
           ? CircleAvatar(
-              backgroundImage: NetworkImage(user.photoUrl),
+              backgroundImage: NetworkImage(user.urlFoto),
             )
           : CircleAvatar(backgroundImage: AssetImage("assets/images/jotaro.jpg"),
 

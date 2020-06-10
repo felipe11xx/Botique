@@ -15,9 +15,7 @@ class FirebaseService {
       final GoogleSignInAccount googleUser = await _googleSignIn.signIn();
       final GoogleSignInAuthentication googleAuth =
           await googleUser.authentication;
-
       print("Google User: ${googleUser.email}");
-
       // Credenciais para o Firebase
       final AuthCredential credential = GoogleAuthProvider.getCredential(
         accessToken: googleAuth.accessToken,
@@ -53,10 +51,13 @@ class FirebaseService {
       final userUpdateInfo = UserUpdateInfo();
       userUpdateInfo.displayName = name;
       userUpdateInfo.photoUrl =
-          "https://i.pinimg.com/474x/6a/f3/29/6af32952636b69c6b3a3fb115ae1eb43.jpg";
-      user.updateProfile(userUpdateInfo);
-      print("useer ${user.displayName}");
-      _saveUser(user);
+          Strings.defaultPicture;
+      user.updateProfile(userUpdateInfo).whenComplete(() => {
+        FirebaseAuth.instance.currentUser().then((value) => {
+          saveUser(value),
+          print("name ===== ${value.displayName}")
+        })
+      });
 
       return ApiResponse.ok(msg: Strings.userCreated);
     } catch (error) {
@@ -64,7 +65,6 @@ class FirebaseService {
 
       return ApiResponse.error(
           msg: "${Strings.userNotCreated}\n\n${error.message}");
-      // Cria um usuario do app
     }
   }
 
@@ -72,17 +72,15 @@ class FirebaseService {
     final fuser = result.user;
 
     // Cria um usuario do app
-    _saveUser(fuser);
-
+    saveUser(fuser);
     // Resposta genérica
     return ApiResponse.ok();
   }
 
-  _saveUser(FirebaseUser fuser) {
+  saveUser(FirebaseUser fuser) {
     // Cria um usuario do app
     final user = User(
       name: fuser.displayName,
-      login: fuser.email,
       email: fuser.email,
       id: fuser.uid,
       urlFoto: fuser.photoUrl,
