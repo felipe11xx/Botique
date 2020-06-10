@@ -6,7 +6,7 @@ class SignUpBloc extends BooleanBloc{
 
   Future<ApiResponse> signUp(String name,String email, String password)async{
     add(true);
-    ApiResponse response = await FirebaseService().signup(name,email, password);
+    ApiResponse response = await FirebaseService().signUp(name,email, password);
     add(false);
     return response;
   }

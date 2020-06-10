@@ -7,24 +7,22 @@ class User {
   String name;
   String email;
   String urlFoto;
-  String token;
-  List<String> roles;
+  String id;
 
-  User(
-      {this.login,
-        this.name,
-        this.email,
-        this.urlFoto,
-        this.token,
-        this.roles});
+  User({
+    this.login,
+    this.name,
+    this.email,
+    this.urlFoto,
+    this.id
+  });
 
   User.fromJson(Map<String, dynamic> json) {
     login = json['login'];
     name = json['nome'];
     email = json['email'];
     urlFoto = json['urlFoto'];
-    token = json['token'];
-    roles = json['roles'] != null ? json['roles'].cast<String>() : null;
+    id = json['id'];
   }
 
   Map<String, dynamic> toJson() {
@@ -33,8 +31,7 @@ class User {
     data['nome'] = this.name;
     data['email'] = this.email;
     data['urlFoto'] = this.urlFoto;
-    data['token'] = this.token;
-    data['roles'] = this.roles;
+    data['id']= this.id;
     return data;
   }
 
@@ -52,7 +49,7 @@ class User {
 
   static Future<User> get() async {
     String json = await Prefs.getString("user.prefs");
-    if(json.isEmpty) {
+    if (json.isEmpty) {
       return null;
     }
     Map map = convert.json.decode(json);
@@ -62,8 +59,6 @@ class User {
 
   @override
   String toString() {
-    return 'Usuario{login: $login, nome: $name}';
+    return 'User{login: $login, name: $name, email: $email, urlFoto: $urlFoto, id: $id}';
   }
-
-
 }

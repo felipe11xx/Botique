@@ -17,6 +17,8 @@ class AppInputText extends StatelessWidget {
   TextCapitalization textCapitalization;
   FocusNode focusNode;
   FocusNode nextFocus;
+  int maxLength;
+  IconButton suffixIcon;
 
   AppInputText(this.label,
       this.hint,
@@ -27,11 +29,14 @@ class AppInputText extends StatelessWidget {
       this.action,
       this.focusNode,
       this.nextFocus,
-      this.textCapitalization = TextCapitalization.none});
+      this.textCapitalization = TextCapitalization.none,
+      this.maxLength ,
+      this.suffixIcon });
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      maxLength: maxLength,
       controller: textEditingController,
       style: TextStyle( fontSize: 25),
       obscureText: isPassword,
@@ -53,6 +58,8 @@ class AppInputText extends StatelessWidget {
         labelStyle: TextStyle(color: Colors.grey, fontSize: 25),
         hintText: hint,
         hintStyle: TextStyle(color: Colors.grey, fontSize: 16),
+        hintMaxLines: 2,
+        suffixIcon: suffixIcon
       ),
     );
   }

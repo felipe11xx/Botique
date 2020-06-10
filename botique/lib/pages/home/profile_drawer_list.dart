@@ -25,7 +25,6 @@ class ProfileDrawerList extends StatelessWidget {
               future: future,
               builder: (context, snapshot) {
                 FirebaseUser user = snapshot.data;
-
                 return user != null ? _header(user) : Container();
               },
             ),

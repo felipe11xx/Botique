@@ -34,11 +34,17 @@ class _HomePageState extends State<HomePage> {
             email: "felipe@hotmail.com",
             profilePicture:
                 "https://i.pinimg.com/474x/6a/f3/29/jotaro.jpg"),
-        body: TabBarView(
-          children: <Widget>[
-            PostPage(),
-            NewsLettersPage()
-          ],
+        body: GestureDetector(
+          behavior: HitTestBehavior.opaque,
+          onTap: () {
+            FocusScope.of(context).requestFocus(new FocusNode());
+          },
+          child: TabBarView(
+            children: <Widget>[
+              PostPage(),
+              NewsLettersPage()
+            ],
+          ),
         ),
       ),
     );

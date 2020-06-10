@@ -27,6 +27,11 @@ class Strings{
   static String standUserEmail = "felipe11xx@hotmail.com";
 
   static String userCreated = "Usuário criado com sucesso";
+  static String userNotCreated = "Não foi possivel concluir o cadastro";
   static String userNotCreatedError = "Não foi possivel criar um usuário";
 
+  static String createComment = "Insira seu comentario abaixo ";
+  static String comment = "Comentario";
+
+  static String postCollection ="posts";
 }

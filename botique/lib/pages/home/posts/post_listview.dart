@@ -14,13 +14,14 @@ class PostsListView extends StatelessWidget {
   }
 
   _listView(List<Post> posts) {
+
+
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 16),
       child: ListView.builder(
+        shrinkWrap: true,
           itemCount: posts != null ? posts.length : 0,
           itemBuilder: (context, index) {
             Post post = posts[index];
-
             return CardMessage(post.author, post.postContent, post.postDate, context);
           }),
     );
