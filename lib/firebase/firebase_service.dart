@@ -48,8 +48,7 @@ class FirebaseService {
       AuthResult result = await _auth.createUserWithEmailAndPassword(
           email: email, password: password);
 
-      updateUser(name, result);
-      return ApiResponse.ok(msg: Strings.userCreated);
+      return  _updateUser(name, result);
     } catch (error) {
       print(error);
 
@@ -58,18 +57,19 @@ class FirebaseService {
     }
   }
 
- updateUser(String name, AuthResult result ){
+  Future<ApiResponse> _updateUser(String name, AuthResult result )async{
     final user = result.user;
     final userUpdateInfo = UserUpdateInfo();
     userUpdateInfo.displayName = name;
-    userUpdateInfo.photoUrl =
-        Strings.defaultPicture;
-    user.updateProfile(userUpdateInfo).whenComplete(() => {
-      FirebaseAuth.instance.currentUser().then((value) => {
-        saveUser(value),
+    userUpdateInfo.photoUrl = Strings.defaultPicture;
 
+   await user.updateProfile(userUpdateInfo).whenComplete(() async => {
+      await FirebaseAuth.instance.currentUser().then((value) => {
+        saveUser(value),
       })
     });
+
+   return ApiResponse.ok(msg: Strings.userCreated);
   }
 
   ApiResponse _onLoginResult(AuthResult result) {

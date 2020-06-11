@@ -18,15 +18,14 @@ class CommentsPage extends StatefulWidget {
 }
 
 class _CommentsPageState extends State<CommentsPage>
-    with OnClickItem, AutomaticKeepAliveClientMixin {
+    with OnClickItem {
   final _tComment = TextEditingController();
   final _formKey = GlobalKey<FormState>();
   final _textFocus = FocusNode();
   Comment comment;
   User user = User();
 
-  @override
-  bool get wantKeepAlive => true;
+
 
   @override
   void initState() {
@@ -34,16 +33,13 @@ class _CommentsPageState extends State<CommentsPage>
     _initUser();
   }
 
-_initUser(){
-  Future<User> future = User.get();
-  future.then((value) => {
-    user = value,
-    print("name ===== ${value.name}")
-  });
-}
+  _initUser() {
+    Future<User> future = User.get();
+    future.then((value) => {user = value, print("name ===== ${value.name}")});
+  }
+
   @override
   Widget build(BuildContext context) {
-    super.build(context);
     return _body();
   }
 
@@ -114,7 +110,9 @@ _initUser(){
 
   _onSendComment() {
     final String commentContent = _tComment.text;
-
+    if(user.id == null){
+      _initUser();
+    }else{
       comment = Comment(
           id: Uuid().v1(),
           authorId: user.id,
@@ -123,6 +121,7 @@ _initUser(){
           postDate: dateNow());
       CommentsService().sendPost(comment);
       _clearComment();
+    }
 
   }
 
@@ -149,8 +148,8 @@ _initUser(){
 
   @override
   onClickDelete(String commentId) {
-
-    alert(context,Strings.wantDeleteComment, onClickOk:()=> CommentsService().deletePost(commentId) );
+    alert(context, Strings.wantDeleteComment,
+        onClickOk: () => CommentsService().deletePost(commentId));
   }
 }
 
