@@ -97,7 +97,6 @@ class _SignUpPageState extends State<SignUpPage> {
               textColor: Colors.deepPurpleAccent,
               onPressed: () => _onClickCancel(),
             ),
-
           ],
         ),
       ),

@@ -16,13 +16,25 @@ class CommentsPage extends StatefulWidget {
   _CommentsPageState createState() => _CommentsPageState();
 }
 
-class _CommentsPageState extends State<CommentsPage> {
+class _CommentsPageState extends State<CommentsPage>
+    with OnClickItem, AutomaticKeepAliveClientMixin {
   final _tComment = TextEditingController();
-
   final _formKey = GlobalKey<FormState>();
+  final _textFocus = FocusNode();
+  Comment comment;
+  User user;
+
+  @override
+  bool get wantKeepAlive => true;
+
+  @override
+  void initState() {
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     return _body();
   }
 
@@ -37,20 +49,7 @@ class _CommentsPageState extends State<CommentsPage> {
           SizedBox(
             height: 20,
           ),
-          Form(
-            key: _formKey,
-            child: AppInputText(
-              Strings.comment,
-              Strings.createComment,
-              validator: validateField,
-              textEditingController: _tComment,
-              maxLength: 280,
-              suffixIcon: IconButton(
-                icon: Icon(Icons.send),
-                onPressed: _onSendComment,
-              ),
-            ),
-          ),
+          inputComment()
         ],
       ),
     );
@@ -72,34 +71,82 @@ class _CommentsPageState extends State<CommentsPage> {
           return Comment.fromMap(document.data);
         }).toList();
 
-        return CommentsListView(comments);
+        return CommentsListView(comments, this);
       },
     );
   }
 
-  _onSendComment() {
+  inputComment() {
+    return Form(
+      key: _formKey,
+      child: AppInputText(
+        Strings.comment,
+        Strings.createComment,
+        validator: validateField,
+        textEditingController: _tComment,
+        focusNode: _textFocus,
+        maxLength: 280,
+        suffixIcon: IconButton(
+          icon: Icon(Icons.send),
+          onPressed: onClickSend,
+        ),
+      ),
+    );
+  }
+
+  onClickSend() {
     if (!_formKey.currentState.validate()) return;
+    if (comment == null) {
+      _onSendComment();
+    } else {
+      _onEditComment();
+    }
+  }
 
+  _onSendComment() {
     Future<User> future = User.get();
-    final String comment = _tComment.text;
-    User user;
-    Comment c;
-    future.then((value) => {
-          user = value,
-          c = Comment(
-              id: Uuid().v1(),
-              authorId: user.id,
-              author: user.name ,
-              content:comment ,
-              postDate: dateNow()),
+    final String commentContent = _tComment.text;
 
-          CommentsService().sendPost(c)
-        });
+    comment = Comment(
+        id: Uuid().v1(),
+        authorId: user.id,
+        author: user.name,
+        content: commentContent,
+        postDate: dateNow());
+    CommentsService().sendPost(comment);
+
+    _clearComment();
+  }
+
+  _onEditComment() {
+    comment.content = _tComment.text;
+    comment.postDate = dateNow();
+    CommentsService().editPost(comment);
+    _clearComment();
+  }
+
+  _clearComment() {
     _tComment.text = "";
-    FocusScope.of(context).requestFocus(new FocusNode());  }
+    FocusScope.of(context).requestFocus(new FocusNode());
+    comment = null;
+  }
 
-  void _onEditComment() {
+  @override
+  // ignore: missing_return
+  onClickEdit(Comment comment) {
+    this.comment = comment;
+    _tComment.text = this.comment.content;
+    FocusScope.of(context).requestFocus(_textFocus);
+  }
+
+  @override
+  onClickDelete(String commentId) {
+    CommentsService().deletePost(commentId);
+  }
 }
 
-  void _onDeletePost() {}
+abstract class OnClickItem {
+  void onClickEdit(Comment comment);
+
+  void onClickDelete(String commentId);
 }
