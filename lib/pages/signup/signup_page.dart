@@ -109,6 +109,7 @@ class _SignUpPageState extends State<SignUpPage> {
     ApiResponse response = await _signUpBloc.signUp(_tName.text, _tEmail.text, _tPassword.text);
 
     if (response.ok) {
+      pop(context);
       push(context, HomePage(), replace: true);
     } else {
       alert(context, response.msg);

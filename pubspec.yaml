@@ -26,7 +26,13 @@ dependencies:
   flutter_auth_buttons: ^0.8.0
   cloud_firestore: ^0.13.6
   uuid: ^2.0.4
-  flutter_slidable: "^0.5.4"
+  flutter_slidable: ^0.5.4
+  flutter_launcher_icons: ^0.7.3
+
+flutter_icons:
+  image_path: "icon/icon.png"
+  android: true
+  ios: true
 
 
 dev_dependencies:

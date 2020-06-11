@@ -15,7 +15,7 @@
       },
       "oauth_client": [
         {
-          "client_id": "1091598248804-lep0skv63ptja4vd3eo0pp6pnnjs798t.apps.googleusercontent.com",
+          "client_id": "1091598248804-00sktob9gjmspsp36tudsouu7jv5ja3k.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "striker2x2.com.botique",
@@ -38,6 +38,13 @@
             {
               "client_id": "1091598248804-hgg8p1o1hj8mc3kgfe9sijqpgasm4o9m.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "1091598248804-2ne5n64h2giakt3ij9gajmh8o02hil79.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "striker2x2.com.botique"
+              }
             }
           ]
         }

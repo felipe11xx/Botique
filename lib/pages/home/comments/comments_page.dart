@@ -25,8 +25,6 @@ class _CommentsPageState extends State<CommentsPage>
   Comment comment;
   User user = User();
 
-
-
   @override
   void initState() {
     super.initState();

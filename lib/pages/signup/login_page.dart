@@ -74,13 +74,13 @@ class _LoginPageState extends State<LoginPage> {
                 );
               },
             ),
-            Container(
-              height: 46,
-              margin: EdgeInsets.only(top: 20),
-              child: GoogleSignInButton(
-                onPressed: _onClickGoogle,
-              ),
-            ),
+//            Container(
+//              height: 46,
+//              margin: EdgeInsets.only(top: 20),
+//              child: GoogleSignInButton(
+//                onPressed: _onClickGoogle,
+//              ),
+//            ),
             Container(
                 height: 46,
                 margin: EdgeInsets.only(top: 24),
@@ -114,15 +114,19 @@ class _LoginPageState extends State<LoginPage> {
     }
   }
 
-  void _onClickGoogle() async {
-    final service = FirebaseService();
-    ApiResponse response = await service.loginGoogle();
+//  void _onClickGoogle() async {
+//    final service = FirebaseService();
+//    ApiResponse response = await service.loginGoogle();
+//
+//    if (response.ok) {
+//      push(context, HomePage(), replace: true);
+//    } else {
+//      alert(context, response.msg);
+//    }
+//  }
 
-    if (response.ok) {
-      push(context, HomePage(), replace: true);
-    } else {
-      alert(context, response.msg);
-    }
+  void _onClickSignUp() {
+    push(context, SignUpPage());
   }
 
   @override
@@ -131,7 +135,5 @@ class _LoginPageState extends State<LoginPage> {
     _loginBloc.dispose();
   }
 
-  void _onClickSignUp() {
-    push(context, SignUpPage());
-  }
+
 }

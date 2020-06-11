@@ -12,7 +12,6 @@ import 'comments_page.dart';
 class CommentsListView extends StatefulWidget {
   List<Comment> comments;
   OnClickItem onClickItem;
-
   CommentsListView(this.comments, this.onClickItem);
 
   @override
@@ -23,16 +22,19 @@ class _CommentsListViewState extends State<CommentsListView> {
   User user = User();
 
   @override
-  void initState() {
-    super.initState();
-
-    Future<User> future = User.get();
-    future.then((value) => {user = value});
+  Widget build(BuildContext context) {
+    return _listView(widget.comments);
   }
 
   @override
-  Widget build(BuildContext context) {
-    return _listView(widget.comments);
+  void initState() {
+    super.initState();
+    _initUser();
+  }
+
+  _initUser() {
+    Future<User> future = User.get();
+    future.then((value) => {user = value, print("name ===== ${value.name}")});
   }
 
   _listView(List<Comment> comments) {
