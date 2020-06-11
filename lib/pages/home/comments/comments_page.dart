@@ -22,7 +22,7 @@ class _CommentsPageState extends State<CommentsPage>
   final _formKey = GlobalKey<FormState>();
   final _textFocus = FocusNode();
   Comment comment;
-  User user;
+  User user = User();
 
   @override
   bool get wantKeepAlive => true;
@@ -30,6 +30,10 @@ class _CommentsPageState extends State<CommentsPage>
   @override
   void initState() {
     super.initState();
+    Future<User> future = User.get();
+    future.then((value) => {
+      user = value
+    });
   }
 
   @override
@@ -49,7 +53,7 @@ class _CommentsPageState extends State<CommentsPage>
           SizedBox(
             height: 20,
           ),
-          inputComment()
+          _inputComment()
         ],
       ),
     );
@@ -76,7 +80,7 @@ class _CommentsPageState extends State<CommentsPage>
     );
   }
 
-  inputComment() {
+  _inputComment() {
     return Form(
       key: _formKey,
       child: AppInputText(
@@ -88,13 +92,13 @@ class _CommentsPageState extends State<CommentsPage>
         maxLength: 280,
         suffixIcon: IconButton(
           icon: Icon(Icons.send),
-          onPressed: onClickSend,
+          onPressed: _onClickSend,
         ),
       ),
     );
   }
 
-  onClickSend() {
+  _onClickSend() {
     if (!_formKey.currentState.validate()) return;
     if (comment == null) {
       _onSendComment();
@@ -104,7 +108,7 @@ class _CommentsPageState extends State<CommentsPage>
   }
 
   _onSendComment() {
-    Future<User> future = User.get();
+
     final String commentContent = _tComment.text;
 
     comment = Comment(

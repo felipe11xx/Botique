@@ -72,6 +72,6 @@ class _CommentsListViewState extends State<CommentsListView> {
   }
 
   _enableActions(Comment comment) {
-    return (user.id != comment.authorId);
+    return (user.id == comment.authorId);
   }
 }
