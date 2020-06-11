@@ -40,4 +40,6 @@ class Strings {
       "https://i.pinimg.com/474x/6a/f3/29/6af32952636b69c6b3a3fb115ae1eb43.jpg";
   static String delete = "Apagar";
   static String edit = "Editar";
+
+  static String wantDeleteComment = "Deseja apagar este comentário";
 }

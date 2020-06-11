@@ -5,6 +5,7 @@ import 'package:botique/pages/home/comments/comments_listview.dart';
 import 'package:botique/resources/strings.dart';
 import 'package:botique/utils/date_formatter.dart';
 import 'package:botique/utils/validator.dart';
+import 'package:botique/widgets/app_alert.dart';
 import 'package:botique/widgets/app_inputtext.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
@@ -30,12 +31,16 @@ class _CommentsPageState extends State<CommentsPage>
   @override
   void initState() {
     super.initState();
-    Future<User> future = User.get();
-    future.then((value) => {
-      user = value
-    });
+    _initUser();
   }
 
+_initUser(){
+  Future<User> future = User.get();
+  future.then((value) => {
+    user = value,
+    print("name ===== ${value.name}")
+  });
+}
   @override
   Widget build(BuildContext context) {
     super.build(context);
@@ -108,18 +113,17 @@ class _CommentsPageState extends State<CommentsPage>
   }
 
   _onSendComment() {
-
     final String commentContent = _tComment.text;
 
-    comment = Comment(
-        id: Uuid().v1(),
-        authorId: user.id,
-        author: user.name,
-        content: commentContent,
-        postDate: dateNow());
-    CommentsService().sendPost(comment);
+      comment = Comment(
+          id: Uuid().v1(),
+          authorId: user.id,
+          author: user.name,
+          content: commentContent,
+          postDate: dateNow());
+      CommentsService().sendPost(comment);
+      _clearComment();
 
-    _clearComment();
   }
 
   _onEditComment() {
@@ -145,7 +149,8 @@ class _CommentsPageState extends State<CommentsPage>
 
   @override
   onClickDelete(String commentId) {
-    CommentsService().deletePost(commentId);
+
+    alert(context,Strings.wantDeleteComment, onClickOk:()=> CommentsService().deletePost(commentId) );
   }
 }
 

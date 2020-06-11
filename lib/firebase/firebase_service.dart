@@ -47,18 +47,8 @@ class FirebaseService {
     try {
       AuthResult result = await _auth.createUserWithEmailAndPassword(
           email: email, password: password);
-      final user = result.user;
-      final userUpdateInfo = UserUpdateInfo();
-      userUpdateInfo.displayName = name;
-      userUpdateInfo.photoUrl =
-          Strings.defaultPicture;
-      user.updateProfile(userUpdateInfo).whenComplete(() => {
-        FirebaseAuth.instance.currentUser().then((value) => {
-          saveUser(value),
-          print("name ===== ${value.displayName}")
-        })
-      });
 
+      updateUser(name, result);
       return ApiResponse.ok(msg: Strings.userCreated);
     } catch (error) {
       print(error);
@@ -66,6 +56,20 @@ class FirebaseService {
       return ApiResponse.error(
           msg: "${Strings.userNotCreated}\n\n${error.message}");
     }
+  }
+
+ updateUser(String name, AuthResult result ){
+    final user = result.user;
+    final userUpdateInfo = UserUpdateInfo();
+    userUpdateInfo.displayName = name;
+    userUpdateInfo.photoUrl =
+        Strings.defaultPicture;
+    user.updateProfile(userUpdateInfo).whenComplete(() => {
+      FirebaseAuth.instance.currentUser().then((value) => {
+        saveUser(value),
+
+      })
+    });
   }
 
   ApiResponse _onLoginResult(AuthResult result) {

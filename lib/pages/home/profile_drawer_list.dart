@@ -57,6 +57,7 @@ class ProfileDrawerList extends StatelessWidget {
 
   _onClickLogout(BuildContext context) {
     FirebaseService().logout();
+    User.clear();
     pop(context);
     push(context, LoginPage(), replace: true);
   }

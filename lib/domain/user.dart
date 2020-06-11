@@ -3,7 +3,7 @@ import 'dart:convert' as convert;
 import 'package:botique/utils/prefs.dart';
 
 class User {
-  String name;
+  String name = "";
   String email;
   String urlFoto;
   String id;
