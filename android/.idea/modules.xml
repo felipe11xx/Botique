@@ -7,7 +7,6 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/1631829305/cloud_firestore.iml" filepath="$PROJECT_DIR$/.idea/modules/1631829305/cloud_firestore.iml" group="android/cloud_firestore" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1586067496/firebase_auth.iml" filepath="$PROJECT_DIR$/.idea/modules/-1586067496/firebase_auth.iml" group="android/firebase_auth" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/1278379842/firebase_core.iml" filepath="$PROJECT_DIR$/.idea/modules/1278379842/firebase_core.iml" group="android/firebase_core" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-202462281/google_sign_in.iml" filepath="$PROJECT_DIR$/.idea/modules/-202462281/google_sign_in.iml" group="android/google_sign_in" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/-738405986/shared_preferences.iml" filepath="$PROJECT_DIR$/.idea/modules/-738405986/shared_preferences.iml" group="android/shared_preferences" />
     </modules>
   </component>

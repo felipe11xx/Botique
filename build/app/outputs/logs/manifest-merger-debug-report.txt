@@ -8,14 +8,10 @@ MERGED from /Users/felipefrazao/Documents/Botique/android/app/src/main/AndroidMa
 MERGED from [:firebase_auth] /Users/felipefrazao/Documents/Botique/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-15:12
 MERGED from [:shared_preferences] /Users/felipefrazao/Documents/Botique/build/shared_preferences/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [:cloud_firestore] /Users/felipefrazao/Documents/Botique/build/cloud_firestore/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-15:12
-MERGED from [:google_sign_in] /Users/felipefrazao/Documents/Botique/build/google_sign_in/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:firebase_core] /Users/felipefrazao/Documents/Botique/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-15:12
 MERGED from [com.google.firebase:firebase-auth:19.2.0] /Users/felipefrazao/.gradle/caches/transforms-2/files-2.1/bc8444f252527aa45b18fb1fcbae8bbb/jetified-firebase-auth-19.2.0/AndroidManifest.xml:17:1-42:12
 MERGED from [com.google.firebase:firebase-firestore:21.3.0] /Users/felipefrazao/.gradle/caches/transforms-2/files-2.1/cad5417a3511b80c2cfb04662c39632c/jetified-firebase-firestore-21.3.0/AndroidManifest.xml:2:1-26:12
-MERGED from [com.google.android.gms:play-services-auth:16.0.1] /Users/felipefrazao/.gradle/caches/transforms-2/files-2.1/ee7e85b21cd9346b83065ab879b6507b/jetified-play-services-auth-16.0.1/AndroidManifest.xml:17:1-39:12
 MERGED from [com.google.firebase:firebase-auth-interop:19.0.0] /Users/felipefrazao/.gradle/caches/transforms-2/files-2.1/b2332177dbee8f8ff90392e010bdaac7/jetified-firebase-auth-interop-19.0.0/AndroidManifest.xml:2:1-10:12
-MERGED from [com.google.android.gms:play-services-auth-api-phone:16.0.0] /Users/felipefrazao/.gradle/caches/transforms-2/files-2.1/cf3bf597361be24eb69ac5255e2d76ed/jetified-play-services-auth-api-phone-16.0.0/AndroidManifest.xml:2:1-7:12
-MERGED from [com.google.android.gms:play-services-auth-base:16.0.0] /Users/felipefrazao/.gradle/caches/transforms-2/files-2.1/969abe52c4dbef296b813f12cd361008/jetified-play-services-auth-base-16.0.0/AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.android.gms:play-services-base:17.1.0] /Users/felipefrazao/.gradle/caches/transforms-2/files-2.1/13776726f4215445a8c2445d33248291/jetified-play-services-base-17.1.0/AndroidManifest.xml:17:1-29:12
 MERGED from [com.google.firebase:firebase-common:19.3.0] /Users/felipefrazao/.gradle/caches/transforms-2/files-2.1/4aae06f1b6f9aaff6bbf418ed91fd09c/jetified-firebase-common-19.3.0/AndroidManifest.xml:15:1-39:12
 MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /Users/felipefrazao/.gradle/caches/transforms-2/files-2.1/b0902c18d91d1d251b62e205e6c744ad/jetified-play-services-tasks-17.0.0/AndroidManifest.xml:2:1-9:12
@@ -67,8 +63,6 @@ MERGED from [com.google.firebase:firebase-auth:19.2.0] /Users/felipefrazao/.grad
 MERGED from [com.google.firebase:firebase-auth:19.2.0] /Users/felipefrazao/.gradle/caches/transforms-2/files-2.1/bc8444f252527aa45b18fb1fcbae8bbb/jetified-firebase-auth-19.2.0/AndroidManifest.xml:23:5-40:19
 MERGED from [com.google.firebase:firebase-firestore:21.3.0] /Users/felipefrazao/.gradle/caches/transforms-2/files-2.1/cad5417a3511b80c2cfb04662c39632c/jetified-firebase-firestore-21.3.0/AndroidManifest.xml:16:5-24:19
 MERGED from [com.google.firebase:firebase-firestore:21.3.0] /Users/felipefrazao/.gradle/caches/transforms-2/files-2.1/cad5417a3511b80c2cfb04662c39632c/jetified-firebase-firestore-21.3.0/AndroidManifest.xml:16:5-24:19
-MERGED from [com.google.android.gms:play-services-auth:16.0.1] /Users/felipefrazao/.gradle/caches/transforms-2/files-2.1/ee7e85b21cd9346b83065ab879b6507b/jetified-play-services-auth-16.0.1/AndroidManifest.xml:22:5-37:19
-MERGED from [com.google.android.gms:play-services-auth:16.0.1] /Users/felipefrazao/.gradle/caches/transforms-2/files-2.1/ee7e85b21cd9346b83065ab879b6507b/jetified-play-services-auth-16.0.1/AndroidManifest.xml:22:5-37:19
 MERGED from [com.google.firebase:firebase-auth-interop:19.0.0] /Users/felipefrazao/.gradle/caches/transforms-2/files-2.1/b2332177dbee8f8ff90392e010bdaac7/jetified-firebase-auth-interop-19.0.0/AndroidManifest.xml:7:5-8:19
 MERGED from [com.google.firebase:firebase-auth-interop:19.0.0] /Users/felipefrazao/.gradle/caches/transforms-2/files-2.1/b2332177dbee8f8ff90392e010bdaac7/jetified-firebase-auth-interop-19.0.0/AndroidManifest.xml:7:5-8:19
 MERGED from [com.google.android.gms:play-services-base:17.1.0] /Users/felipefrazao/.gradle/caches/transforms-2/files-2.1/13776726f4215445a8c2445d33248291/jetified-play-services-base-17.1.0/AndroidManifest.xml:22:5-27:19
@@ -143,22 +137,14 @@ MERGED from [:shared_preferences] /Users/felipefrazao/Documents/Botique/build/sh
 MERGED from [:shared_preferences] /Users/felipefrazao/Documents/Botique/build/shared_preferences/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:cloud_firestore] /Users/felipefrazao/Documents/Botique/build/cloud_firestore/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:cloud_firestore] /Users/felipefrazao/Documents/Botique/build/cloud_firestore/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:google_sign_in] /Users/felipefrazao/Documents/Botique/build/google_sign_in/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:google_sign_in] /Users/felipefrazao/Documents/Botique/build/google_sign_in/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:firebase_core] /Users/felipefrazao/Documents/Botique/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:firebase_core] /Users/felipefrazao/Documents/Botique/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-auth:19.2.0] /Users/felipefrazao/.gradle/caches/transforms-2/files-2.1/bc8444f252527aa45b18fb1fcbae8bbb/jetified-firebase-auth-19.2.0/AndroidManifest.xml:21:5-44
 MERGED from [com.google.firebase:firebase-auth:19.2.0] /Users/felipefrazao/.gradle/caches/transforms-2/files-2.1/bc8444f252527aa45b18fb1fcbae8bbb/jetified-firebase-auth-19.2.0/AndroidManifest.xml:21:5-44
 MERGED from [com.google.firebase:firebase-firestore:21.3.0] /Users/felipefrazao/.gradle/caches/transforms-2/files-2.1/cad5417a3511b80c2cfb04662c39632c/jetified-firebase-firestore-21.3.0/AndroidManifest.xml:7:5-9:41
 MERGED from [com.google.firebase:firebase-firestore:21.3.0] /Users/felipefrazao/.gradle/caches/transforms-2/files-2.1/cad5417a3511b80c2cfb04662c39632c/jetified-firebase-firestore-21.3.0/AndroidManifest.xml:7:5-9:41
-MERGED from [com.google.android.gms:play-services-auth:16.0.1] /Users/felipefrazao/.gradle/caches/transforms-2/files-2.1/ee7e85b21cd9346b83065ab879b6507b/jetified-play-services-auth-16.0.1/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-auth:16.0.1] /Users/felipefrazao/.gradle/caches/transforms-2/files-2.1/ee7e85b21cd9346b83065ab879b6507b/jetified-play-services-auth-16.0.1/AndroidManifest.xml:20:5-44
 MERGED from [com.google.firebase:firebase-auth-interop:19.0.0] /Users/felipefrazao/.gradle/caches/transforms-2/files-2.1/b2332177dbee8f8ff90392e010bdaac7/jetified-firebase-auth-interop-19.0.0/AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-auth-interop:19.0.0] /Users/felipefrazao/.gradle/caches/transforms-2/files-2.1/b2332177dbee8f8ff90392e010bdaac7/jetified-firebase-auth-interop-19.0.0/AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-auth-api-phone:16.0.0] /Users/felipefrazao/.gradle/caches/transforms-2/files-2.1/cf3bf597361be24eb69ac5255e2d76ed/jetified-play-services-auth-api-phone-16.0.0/AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-auth-api-phone:16.0.0] /Users/felipefrazao/.gradle/caches/transforms-2/files-2.1/cf3bf597361be24eb69ac5255e2d76ed/jetified-play-services-auth-api-phone-16.0.0/AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-auth-base:16.0.0] /Users/felipefrazao/.gradle/caches/transforms-2/files-2.1/969abe52c4dbef296b813f12cd361008/jetified-play-services-auth-base-16.0.0/AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-auth-base:16.0.0] /Users/felipefrazao/.gradle/caches/transforms-2/files-2.1/969abe52c4dbef296b813f12cd361008/jetified-play-services-auth-base-16.0.0/AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-base:17.1.0] /Users/felipefrazao/.gradle/caches/transforms-2/files-2.1/13776726f4215445a8c2445d33248291/jetified-play-services-base-17.1.0/AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-base:17.1.0] /Users/felipefrazao/.gradle/caches/transforms-2/files-2.1/13776726f4215445a8c2445d33248291/jetified-play-services-base-17.1.0/AndroidManifest.xml:20:5-44
 MERGED from [com.google.firebase:firebase-common:19.3.0] /Users/felipefrazao/.gradle/caches/transforms-2/files-2.1/4aae06f1b6f9aaff6bbf418ed91fd09c/jetified-firebase-common-19.3.0/AndroidManifest.xml:20:5-22:41
@@ -213,8 +199,6 @@ INJECTED from /Users/felipefrazao/Documents/Botique/android/app/src/debug/Androi
 		INJECTED from /Users/felipefrazao/Documents/Botique/android/app/src/debug/AndroidManifest.xml
 uses-permission#android.permission.INTERNET
 ADDED from /Users/felipefrazao/Documents/Botique/android/app/src/debug/AndroidManifest.xml:6:5-66
-MERGED from [:google_sign_in] /Users/felipefrazao/Documents/Botique/build/google_sign_in/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-67
-MERGED from [:google_sign_in] /Users/felipefrazao/Documents/Botique/build/google_sign_in/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-67
 MERGED from [com.google.firebase:firebase-firestore:21.3.0] /Users/felipefrazao/.gradle/caches/transforms-2/files-2.1/cad5417a3511b80c2cfb04662c39632c/jetified-firebase-firestore-21.3.0/AndroidManifest.xml:14:5-67
 MERGED from [com.google.firebase:firebase-firestore:21.3.0] /Users/felipefrazao/.gradle/caches/transforms-2/files-2.1/cad5417a3511b80c2cfb04662c39632c/jetified-firebase-firestore-21.3.0/AndroidManifest.xml:14:5-67
 	android:name
@@ -291,24 +275,6 @@ ADDED from [com.google.firebase:firebase-firestore:21.3.0] /Users/felipefrazao/.
 		ADDED from [com.google.firebase:firebase-firestore:21.3.0] /Users/felipefrazao/.gradle/caches/transforms-2/files-2.1/cad5417a3511b80c2cfb04662c39632c/jetified-firebase-firestore-21.3.0/AndroidManifest.xml:22:17-82
 	android:name
 		ADDED from [com.google.firebase:firebase-firestore:21.3.0] /Users/felipefrazao/.gradle/caches/transforms-2/files-2.1/cad5417a3511b80c2cfb04662c39632c/jetified-firebase-firestore-21.3.0/AndroidManifest.xml:21:17-111
-activity#com.google.android.gms.auth.api.signin.internal.SignInHubActivity
-ADDED from [com.google.android.gms:play-services-auth:16.0.1] /Users/felipefrazao/.gradle/caches/transforms-2/files-2.1/ee7e85b21cd9346b83065ab879b6507b/jetified-play-services-auth-16.0.1/AndroidManifest.xml:23:9-27:75
-	android:excludeFromRecents
-		ADDED from [com.google.android.gms:play-services-auth:16.0.1] /Users/felipefrazao/.gradle/caches/transforms-2/files-2.1/ee7e85b21cd9346b83065ab879b6507b/jetified-play-services-auth-16.0.1/AndroidManifest.xml:25:13-46
-	android:exported
-		ADDED from [com.google.android.gms:play-services-auth:16.0.1] /Users/felipefrazao/.gradle/caches/transforms-2/files-2.1/ee7e85b21cd9346b83065ab879b6507b/jetified-play-services-auth-16.0.1/AndroidManifest.xml:26:13-37
-	android:theme
-		ADDED from [com.google.android.gms:play-services-auth:16.0.1] /Users/felipefrazao/.gradle/caches/transforms-2/files-2.1/ee7e85b21cd9346b83065ab879b6507b/jetified-play-services-auth-16.0.1/AndroidManifest.xml:27:13-72
-	android:name
-		ADDED from [com.google.android.gms:play-services-auth:16.0.1] /Users/felipefrazao/.gradle/caches/transforms-2/files-2.1/ee7e85b21cd9346b83065ab879b6507b/jetified-play-services-auth-16.0.1/AndroidManifest.xml:24:13-93
-service#com.google.android.gms.auth.api.signin.RevocationBoundService
-ADDED from [com.google.android.gms:play-services-auth:16.0.1] /Users/felipefrazao/.gradle/caches/transforms-2/files-2.1/ee7e85b21cd9346b83065ab879b6507b/jetified-play-services-auth-16.0.1/AndroidManifest.xml:33:9-36:110
-	android:exported
-		ADDED from [com.google.android.gms:play-services-auth:16.0.1] /Users/felipefrazao/.gradle/caches/transforms-2/files-2.1/ee7e85b21cd9346b83065ab879b6507b/jetified-play-services-auth-16.0.1/AndroidManifest.xml:35:13-36
-	android:permission
-		ADDED from [com.google.android.gms:play-services-auth:16.0.1] /Users/felipefrazao/.gradle/caches/transforms-2/files-2.1/ee7e85b21cd9346b83065ab879b6507b/jetified-play-services-auth-16.0.1/AndroidManifest.xml:36:13-107
-	android:name
-		ADDED from [com.google.android.gms:play-services-auth:16.0.1] /Users/felipefrazao/.gradle/caches/transforms-2/files-2.1/ee7e85b21cd9346b83065ab879b6507b/jetified-play-services-auth-16.0.1/AndroidManifest.xml:34:13-89
 activity#com.google.android.gms.common.api.GoogleApiActivity
 ADDED from [com.google.android.gms:play-services-base:17.1.0] /Users/felipefrazao/.gradle/caches/transforms-2/files-2.1/13776726f4215445a8c2445d33248291/jetified-play-services-base-17.1.0/AndroidManifest.xml:23:9-26:75
 	android:exported

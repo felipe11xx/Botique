@@ -53,7 +53,27 @@ R
 "lib/firebase/firebase_service.dart,7/0/70ce7cb34b756e9cd1149b24b71034c70fa27f17
 <
 pubspec.yaml,e/8/e8e045469170189f1d6ef12576bd01af132b1018
-E
-test/widget_test.dart,8/8/88fe0f60a6af31ca841a0d74d4ee9642f8d32eb2
 =
 lib/main.dart,a/8/a8ea5273939a12e805641671b79e5eaeaab1e231
+X
+(android/app/src/main/AndroidManifest.xml,e/f/ef79bfd51db69a15dbf5807c05bb249bdccb0556
+H
+android/app/build.gradle,5/9/594ba479000e0bb5513707b709ad1cd52da9063a
+D
+android/build.gradle,1/3/13f012f60e18f38225ce59137db2e07d5d70b29c
+H
+android/local.properties,2/6/2692013b75d96a0c759e065508281625194c49ee
+I
+android/gradle.properties,7/f/7f1dfe9671149f8d9c88462c92762aed23bf28d2
+I
+lib/utils/navigation.dart,f/9/f984db1206862e988307206f90d3112c27a9f384
+H
+lib/utils/validator.dart,b/9/b9960c22ed51a6eded10d652ad3aa1cb7fd0824b
+H
+test/validator_test.dart,f/d/fd92530bbbaee9ceb9fad598dc1731482704ff76
+J
+lib/pages/splash_page.dart,b/b/bb1016d6374e8b324c4ae144cdd1a2b78f7f1eb1
+Q
+!test/splash_page_widget_test.dart,8/c/8cc0b932e075f0fd737734da1ebb7fae4bf85285
+P
+ test/login_page_widget_test.dart,3/3/33e2b18e9a2545c16a01658062878ad146eb7fda

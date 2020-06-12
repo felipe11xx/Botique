@@ -15,7 +15,6 @@
             <option value="$PROJECT_DIR$/../../Dev/flutter/.pub-cache/hosted/pub.dartlang.org/cloud_firestore-0.13.6/android" />
             <option value="$PROJECT_DIR$/../../Dev/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_auth-0.16.1/android" />
             <option value="$PROJECT_DIR$/../../Dev/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core-0.4.5/android" />
-            <option value="$PROJECT_DIR$/../../Dev/flutter/.pub-cache/hosted/pub.dartlang.org/google_sign_in-4.5.1/android" />
             <option value="$PROJECT_DIR$/../../Dev/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences-0.5.7+3/android" />
           </set>
         </option>

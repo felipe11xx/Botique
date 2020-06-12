@@ -22,8 +22,6 @@ dependencies:
 #  firabase dependences
   firebase_core: ^0.4.5
   firebase_auth: ^0.16.1
-  google_sign_in: ^4.5.1
-  flutter_auth_buttons: ^0.8.0
   cloud_firestore: ^0.13.6
   uuid: ^2.0.4
   flutter_slidable: ^0.5.4
@@ -38,7 +36,6 @@ flutter_icons:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  mockito: 4.0.0
 
 
 flutter:

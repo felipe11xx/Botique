@@ -155,54 +155,31 @@
 100            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
 100-->[com.google.firebase:firebase-auth:19.2.0] /Users/felipefrazao/.gradle/caches/transforms-2/files-2.1/bc8444f252527aa45b18fb1fcbae8bbb/jetified-firebase-auth-19.2.0/AndroidManifest.xml:30:13-72
 101        <activity
-101-->[com.google.android.gms:play-services-auth:16.0.1] /Users/felipefrazao/.gradle/caches/transforms-2/files-2.1/ee7e85b21cd9346b83065ab879b6507b/jetified-play-services-auth-16.0.1/AndroidManifest.xml:23:9-27:75
-102            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
-102-->[com.google.android.gms:play-services-auth:16.0.1] /Users/felipefrazao/.gradle/caches/transforms-2/files-2.1/ee7e85b21cd9346b83065ab879b6507b/jetified-play-services-auth-16.0.1/AndroidManifest.xml:24:13-93
-103            android:excludeFromRecents="true"
-103-->[com.google.android.gms:play-services-auth:16.0.1] /Users/felipefrazao/.gradle/caches/transforms-2/files-2.1/ee7e85b21cd9346b83065ab879b6507b/jetified-play-services-auth-16.0.1/AndroidManifest.xml:25:13-46
-104            android:exported="false"
-104-->[com.google.android.gms:play-services-auth:16.0.1] /Users/felipefrazao/.gradle/caches/transforms-2/files-2.1/ee7e85b21cd9346b83065ab879b6507b/jetified-play-services-auth-16.0.1/AndroidManifest.xml:26:13-37
-105            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-105-->[com.google.android.gms:play-services-auth:16.0.1] /Users/felipefrazao/.gradle/caches/transforms-2/files-2.1/ee7e85b21cd9346b83065ab879b6507b/jetified-play-services-auth-16.0.1/AndroidManifest.xml:27:13-72
-106        <!--
-107            Service handling Google Sign-In user revocation. For apps that do not integrate with
-108            Google Sign-In, this service will never be started.
-109        -->
-110        <service
-110-->[com.google.android.gms:play-services-auth:16.0.1] /Users/felipefrazao/.gradle/caches/transforms-2/files-2.1/ee7e85b21cd9346b83065ab879b6507b/jetified-play-services-auth-16.0.1/AndroidManifest.xml:33:9-36:110
-111            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
-111-->[com.google.android.gms:play-services-auth:16.0.1] /Users/felipefrazao/.gradle/caches/transforms-2/files-2.1/ee7e85b21cd9346b83065ab879b6507b/jetified-play-services-auth-16.0.1/AndroidManifest.xml:34:13-89
-112            android:exported="true"
-112-->[com.google.android.gms:play-services-auth:16.0.1] /Users/felipefrazao/.gradle/caches/transforms-2/files-2.1/ee7e85b21cd9346b83065ab879b6507b/jetified-play-services-auth-16.0.1/AndroidManifest.xml:35:13-36
-113            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION" />
-113-->[com.google.android.gms:play-services-auth:16.0.1] /Users/felipefrazao/.gradle/caches/transforms-2/files-2.1/ee7e85b21cd9346b83065ab879b6507b/jetified-play-services-auth-16.0.1/AndroidManifest.xml:36:13-107
-114
-115        <activity
-115-->[com.google.android.gms:play-services-base:17.1.0] /Users/felipefrazao/.gradle/caches/transforms-2/files-2.1/13776726f4215445a8c2445d33248291/jetified-play-services-base-17.1.0/AndroidManifest.xml:23:9-26:75
-116            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-116-->[com.google.android.gms:play-services-base:17.1.0] /Users/felipefrazao/.gradle/caches/transforms-2/files-2.1/13776726f4215445a8c2445d33248291/jetified-play-services-base-17.1.0/AndroidManifest.xml:24:13-79
-117            android:exported="false"
-117-->[com.google.android.gms:play-services-base:17.1.0] /Users/felipefrazao/.gradle/caches/transforms-2/files-2.1/13776726f4215445a8c2445d33248291/jetified-play-services-base-17.1.0/AndroidManifest.xml:25:13-37
-118            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-118-->[com.google.android.gms:play-services-base:17.1.0] /Users/felipefrazao/.gradle/caches/transforms-2/files-2.1/13776726f4215445a8c2445d33248291/jetified-play-services-base-17.1.0/AndroidManifest.xml:26:13-72
-119
-120        <provider
-120-->[com.google.firebase:firebase-common:19.3.0] /Users/felipefrazao/.gradle/caches/transforms-2/files-2.1/4aae06f1b6f9aaff6bbf418ed91fd09c/jetified-firebase-common-19.3.0/AndroidManifest.xml:26:9-30:39
-121            android:name="com.google.firebase.provider.FirebaseInitProvider"
-121-->[com.google.firebase:firebase-common:19.3.0] /Users/felipefrazao/.gradle/caches/transforms-2/files-2.1/4aae06f1b6f9aaff6bbf418ed91fd09c/jetified-firebase-common-19.3.0/AndroidManifest.xml:27:13-77
-122            android:authorities="striker2x2.com.botique.firebaseinitprovider"
-122-->[com.google.firebase:firebase-common:19.3.0] /Users/felipefrazao/.gradle/caches/transforms-2/files-2.1/4aae06f1b6f9aaff6bbf418ed91fd09c/jetified-firebase-common-19.3.0/AndroidManifest.xml:28:13-72
-123            android:exported="false"
-123-->[com.google.firebase:firebase-common:19.3.0] /Users/felipefrazao/.gradle/caches/transforms-2/files-2.1/4aae06f1b6f9aaff6bbf418ed91fd09c/jetified-firebase-common-19.3.0/AndroidManifest.xml:29:13-37
-124            android:initOrder="100" />
-124-->[com.google.firebase:firebase-common:19.3.0] /Users/felipefrazao/.gradle/caches/transforms-2/files-2.1/4aae06f1b6f9aaff6bbf418ed91fd09c/jetified-firebase-common-19.3.0/AndroidManifest.xml:30:13-36
-125
-126        <meta-data
-126-->[com.google.android.gms:play-services-basement:17.0.0] /Users/felipefrazao/.gradle/caches/transforms-2/files-2.1/0cd1183d03563a3b1c35ca1940a3d68c/jetified-play-services-basement-17.0.0/AndroidManifest.xml:23:9-25:69
-127            android:name="com.google.android.gms.version"
-127-->[com.google.android.gms:play-services-basement:17.0.0] /Users/felipefrazao/.gradle/caches/transforms-2/files-2.1/0cd1183d03563a3b1c35ca1940a3d68c/jetified-play-services-basement-17.0.0/AndroidManifest.xml:24:13-58
-128            android:value="@integer/google_play_services_version" />
-128-->[com.google.android.gms:play-services-basement:17.0.0] /Users/felipefrazao/.gradle/caches/transforms-2/files-2.1/0cd1183d03563a3b1c35ca1940a3d68c/jetified-play-services-basement-17.0.0/AndroidManifest.xml:25:13-66
-129    </application>
-130
-131</manifest>
+101-->[com.google.android.gms:play-services-base:17.1.0] /Users/felipefrazao/.gradle/caches/transforms-2/files-2.1/13776726f4215445a8c2445d33248291/jetified-play-services-base-17.1.0/AndroidManifest.xml:23:9-26:75
+102            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+102-->[com.google.android.gms:play-services-base:17.1.0] /Users/felipefrazao/.gradle/caches/transforms-2/files-2.1/13776726f4215445a8c2445d33248291/jetified-play-services-base-17.1.0/AndroidManifest.xml:24:13-79
+103            android:exported="false"
+103-->[com.google.android.gms:play-services-base:17.1.0] /Users/felipefrazao/.gradle/caches/transforms-2/files-2.1/13776726f4215445a8c2445d33248291/jetified-play-services-base-17.1.0/AndroidManifest.xml:25:13-37
+104            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+104-->[com.google.android.gms:play-services-base:17.1.0] /Users/felipefrazao/.gradle/caches/transforms-2/files-2.1/13776726f4215445a8c2445d33248291/jetified-play-services-base-17.1.0/AndroidManifest.xml:26:13-72
+105
+106        <provider
+106-->[com.google.firebase:firebase-common:19.3.0] /Users/felipefrazao/.gradle/caches/transforms-2/files-2.1/4aae06f1b6f9aaff6bbf418ed91fd09c/jetified-firebase-common-19.3.0/AndroidManifest.xml:26:9-30:39
+107            android:name="com.google.firebase.provider.FirebaseInitProvider"
+107-->[com.google.firebase:firebase-common:19.3.0] /Users/felipefrazao/.gradle/caches/transforms-2/files-2.1/4aae06f1b6f9aaff6bbf418ed91fd09c/jetified-firebase-common-19.3.0/AndroidManifest.xml:27:13-77
+108            android:authorities="striker2x2.com.botique.firebaseinitprovider"
+108-->[com.google.firebase:firebase-common:19.3.0] /Users/felipefrazao/.gradle/caches/transforms-2/files-2.1/4aae06f1b6f9aaff6bbf418ed91fd09c/jetified-firebase-common-19.3.0/AndroidManifest.xml:28:13-72
+109            android:exported="false"
+109-->[com.google.firebase:firebase-common:19.3.0] /Users/felipefrazao/.gradle/caches/transforms-2/files-2.1/4aae06f1b6f9aaff6bbf418ed91fd09c/jetified-firebase-common-19.3.0/AndroidManifest.xml:29:13-37
+110            android:initOrder="100" />
+110-->[com.google.firebase:firebase-common:19.3.0] /Users/felipefrazao/.gradle/caches/transforms-2/files-2.1/4aae06f1b6f9aaff6bbf418ed91fd09c/jetified-firebase-common-19.3.0/AndroidManifest.xml:30:13-36
+111
+112        <meta-data
+112-->[com.google.android.gms:play-services-basement:17.0.0] /Users/felipefrazao/.gradle/caches/transforms-2/files-2.1/0cd1183d03563a3b1c35ca1940a3d68c/jetified-play-services-basement-17.0.0/AndroidManifest.xml:23:9-25:69
+113            android:name="com.google.android.gms.version"
+113-->[com.google.android.gms:play-services-basement:17.0.0] /Users/felipefrazao/.gradle/caches/transforms-2/files-2.1/0cd1183d03563a3b1c35ca1940a3d68c/jetified-play-services-basement-17.0.0/AndroidManifest.xml:24:13-58
+114            android:value="@integer/google_play_services_version" />
+114-->[com.google.android.gms:play-services-basement:17.0.0] /Users/felipefrazao/.gradle/caches/transforms-2/files-2.1/0cd1183d03563a3b1c35ca1940a3d68c/jetified-play-services-basement-17.0.0/AndroidManifest.xml:25:13-66
+115    </application>
+116
+117</manifest>
