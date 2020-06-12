@@ -1,3 +1,4 @@
+import 'package:botique/domain/user.dart';
 import 'package:botique/pages/signup/login_page.dart';
 import 'package:botique/resources/strings.dart';
 import 'package:botique/utils/navigation.dart';
@@ -17,15 +18,17 @@ class _SplashPageState extends State<SplashPage> {
   @override
   void initState() {
     super.initState();
+    _splashFlow();
+  }
+
+  _splashFlow(){
     Future future = Future.delayed(Duration(seconds: 3));
-
     // Usuario
-    Future<FirebaseUser> futureFirebase = FirebaseAuth.instance.currentUser();
+    Future<User> futureUser = User.get();
 
-    Future.wait([future, futureFirebase]).then((List values) {
-      FirebaseUser user = values[1];
+    Future.wait([future, futureUser]).then((List values) {
+      User user = values[1];
       print(user);
-
       if (user != null) {
         push(context, HomePage(), replace: true);
       } else {
@@ -33,7 +36,6 @@ class _SplashPageState extends State<SplashPage> {
       }
     });
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

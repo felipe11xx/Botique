@@ -36,44 +36,49 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   _body() {
-    return Form(
-      key: _formKey,
-      child: Container(
-        padding: EdgeInsets.all(16),
-        child: ListView(
-          children: <Widget>[
-            AppInputText(
-              Strings.email,
-              Strings.insertLogin,
-              textEditingController: _tEmail,
-              validator: validateEmail,
-              action: TextInputAction.next,
-              keyboardType: TextInputType.emailAddress,
-              nextFocus: _focusPassword,
-            ),
-            SizedBox(
-              height: 16,
-            ),
-            AppInputText(Strings.password, Strings.insertPassword,
-                isPassword: true,
-                textEditingController: _tPassword,
-                validator: validatePassword,
-                keyboardType: TextInputType.number,
-                focusNode: _focusPassword),
-            SizedBox(
-              height: 20,
-            ),
-            StreamBuilder<bool>(
-              stream: _loginBloc.stream,
-              initialData: false,
-              builder: (context, snapshot) {
-                return AppButton(
-                  Strings.login,
-                  onPressed: _onClickLogin,
-                  showProgress: snapshot.data,
-                );
-              },
-            ),
+    return GestureDetector(
+        behavior: HitTestBehavior.opaque,
+        onTap: () {
+          FocusScope.of(context).requestFocus(new FocusNode());
+        },
+      child: Form(
+        key: _formKey,
+        child: Container(
+          padding: EdgeInsets.all(16),
+          child: ListView(
+            children: <Widget>[
+              AppInputText(
+                Strings.email,
+                Strings.insertLogin,
+                textEditingController: _tEmail,
+                validator: validateEmail,
+                action: TextInputAction.next,
+                keyboardType: TextInputType.emailAddress,
+                nextFocus: _focusPassword,
+              ),
+              SizedBox(
+                height: 16,
+              ),
+              AppInputText(Strings.password, Strings.insertPassword,
+                  isPassword: true,
+                  textEditingController: _tPassword,
+                  validator: validatePassword,
+                  keyboardType: TextInputType.number,
+                  focusNode: _focusPassword),
+              SizedBox(
+                height: 20,
+              ),
+              StreamBuilder<bool>(
+                stream: _loginBloc.stream,
+                initialData: false,
+                builder: (context, snapshot) {
+                  return AppButton(
+                    Strings.login,
+                    onPressed: _onClickLogin,
+                    showProgress: snapshot.data,
+                  );
+                },
+              ),
 //            Container(
 //              height: 46,
 //              margin: EdgeInsets.only(top: 20),
@@ -81,20 +86,21 @@ class _LoginPageState extends State<LoginPage> {
 //                onPressed: _onClickGoogle,
 //              ),
 //            ),
-            Container(
-                height: 46,
-                margin: EdgeInsets.only(top: 24),
-                child: InkWell(
-                  onTap: _onClickSignUp,
-                  child: text(
-                    Strings.singUp,
-                    fontSize: 22,
-                    color: Colors.blue,
-                    decoration: TextDecoration.underline,
-                    textAlign: TextAlign.center,
-                  ),
-                )),
-          ],
+              Container(
+                  height: 46,
+                  margin: EdgeInsets.only(top: 24),
+                  child: InkWell(
+                    onTap: _onClickSignUp,
+                    child: text(
+                      Strings.singUp,
+                      fontSize: 22,
+                      color: Colors.blue,
+                      decoration: TextDecoration.underline,
+                      textAlign: TextAlign.center,
+                    ),
+                  )),
+            ],
+          ),
         ),
       ),
     );

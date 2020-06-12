@@ -18,6 +18,7 @@ class AppInputText extends StatelessWidget {
   FocusNode focusNode;
   FocusNode nextFocus;
   int maxLength;
+  int maxLines;
   IconButton suffixIcon;
 
   AppInputText(this.label,
@@ -30,7 +31,7 @@ class AppInputText extends StatelessWidget {
       this.focusNode,
       this.nextFocus,
       this.textCapitalization = TextCapitalization.none,
-      this.maxLength ,
+      this.maxLength , this.maxLines,
       this.suffixIcon });
 
   @override
@@ -42,9 +43,11 @@ class AppInputText extends StatelessWidget {
       obscureText: isPassword,
       validator: validator,
       keyboardType: keyboardType,
+      maxLines: maxLines = 1,
       textInputAction: action,
       textCapitalization: textCapitalization,
       focusNode: focusNode,
+
       onFieldSubmitted: (text) {
         if (nextFocus != null) {
           FocusScope.of(context).requestFocus(nextFocus);
