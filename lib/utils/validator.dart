@@ -9,7 +9,6 @@ String validateField(String value) {
 }
 
 String validateName(String value) {
-
   if(!value.trim().contains(" ") ){
     return Strings.invalidName;
   }
